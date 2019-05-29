@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="b9z-Qm-a5h">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="m9O-Rd-EAz">
+            <objects>
+                <viewController id="UN8-58-xdQ" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yME-Bs-ibp">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="k7a-4H-N89"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="6yP-9h-0aV"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="P3x-FC-3hz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="769" y="12"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="sYb-jd-2mW">
+            <objects>
+                <viewController id="Pck-ia-zlo" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rsI-08-VfU">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Xel-d1-tF5"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nfh-kH-lGl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1565" y="14"/>
+        </scene>
+        <!--客服-->
+        <scene sceneID="OSg-Tx-YP2">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="b9z-Qm-a5h" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="客服" image="speech-bubble-2" id="RVB-V3-emt">
+                        <color key="badgeColor" red="0.94258779290000005" green="0.52374685200000004" blue="0.30980392159999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Frg-hq-9Rh">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="UN8-58-xdQ" kind="relationship" relationship="rootViewController" id="FG5-GB-3hi"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VcQ-Wm-9JI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-59.420289855072468" y="14.732142857142856"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="speech-bubble-2" width="30" height="30"/>
+    </resources>
+    <color key="tintColor" red="0.94258779290000005" green="0.52374685200000004" blue="0.30980392159999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+</document>

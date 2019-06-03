@@ -9,17 +9,32 @@
 /* Begin PBXBuildFile section */
 		A857C9A1229EAD4200DA7C52 /* Chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A857C9A0229EAD4200DA7C52 /* Chat.storyboard */; };
 		A857C9A3229EAD9A00DA7C52 /* Management.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A857C9A2229EAD9A00DA7C52 /* Management.storyboard */; };
+		A857C9A722A00D5F00DA7C52 /* CustomerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A857C9A622A00D5F00DA7C52 /* CustomerButton.swift */; };
+		A857C9A922A00EA900DA7C52 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A857C9A822A00EA900DA7C52 /* CategoryViewController.swift */; };
+		A857C9AB22A0169500DA7C52 /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A857C9AA22A0169500DA7C52 /* CategoryTableViewCell.swift */; };
+		A857C9AD22A0D22500DA7C52 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A857C9AC22A0D22500DA7C52 /* ChatViewController.swift */; };
+		A857C9AF22A0D25700DA7C52 /* ChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A857C9AE22A0D25700DA7C52 /* ChatTableViewCell.swift */; };
+		A857C9B122A0D80C00DA7C52 /* ManagementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A857C9B022A0D80C00DA7C52 /* ManagementViewController.swift */; };
+		A857C9B322A0D84600DA7C52 /* ManagementTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A857C9B222A0D84600DA7C52 /* ManagementTableViewCell.swift */; };
 		A87436C8228C117E001F31D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87436C7228C117E001F31D1 /* AppDelegate.swift */; };
 		A87436CA228C117E001F31D1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87436C9228C117E001F31D1 /* ViewController.swift */; };
 		A87436CD228C117E001F31D1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A87436CB228C117E001F31D1 /* Main.storyboard */; };
 		A87436D0228C117E001F31D1 /* backofficeTest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A87436CE228C117E001F31D1 /* backofficeTest.xcdatamodeld */; };
 		A87436D2228C117E001F31D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A87436D1228C117E001F31D1 /* Assets.xcassets */; };
 		A87436D5228C117E001F31D1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A87436D3228C117E001F31D1 /* LaunchScreen.storyboard */; };
+		A87A547622A26CE500AD12EE /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87A547522A26CE500AD12EE /* RegisterViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A857C9A0229EAD4200DA7C52 /* Chat.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Chat.storyboard; sourceTree = "<group>"; };
 		A857C9A2229EAD9A00DA7C52 /* Management.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Management.storyboard; sourceTree = "<group>"; };
+		A857C9A622A00D5F00DA7C52 /* CustomerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerButton.swift; sourceTree = "<group>"; };
+		A857C9A822A00EA900DA7C52 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
+		A857C9AA22A0169500DA7C52 /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
+		A857C9AC22A0D22500DA7C52 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		A857C9AE22A0D25700DA7C52 /* ChatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTableViewCell.swift; sourceTree = "<group>"; };
+		A857C9B022A0D80C00DA7C52 /* ManagementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagementViewController.swift; sourceTree = "<group>"; };
+		A857C9B222A0D84600DA7C52 /* ManagementTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagementTableViewCell.swift; sourceTree = "<group>"; };
 		A87436C4228C117E001F31D1 /* backofficeTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = backofficeTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A87436C7228C117E001F31D1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A87436C9228C117E001F31D1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -28,6 +43,7 @@
 		A87436D1228C117E001F31D1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A87436D4228C117E001F31D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A87436D6228C117E001F31D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A87A547522A26CE500AD12EE /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,7 +61,11 @@
 			isa = PBXGroup;
 			children = (
 				A857C9A0229EAD4200DA7C52 /* Chat.storyboard */,
+				A857C9AE22A0D25700DA7C52 /* ChatTableViewCell.swift */,
+				A857C9AC22A0D22500DA7C52 /* ChatViewController.swift */,
 				A857C9A2229EAD9A00DA7C52 /* Management.storyboard */,
+				A857C9B022A0D80C00DA7C52 /* ManagementViewController.swift */,
+				A857C9B222A0D84600DA7C52 /* ManagementTableViewCell.swift */,
 				A87436C6228C117E001F31D1 /* backofficeTest */,
 				A87436C5228C117E001F31D1 /* Products */,
 			);
@@ -63,9 +83,13 @@
 			isa = PBXGroup;
 			children = (
 				A87436CB228C117E001F31D1 /* Main.storyboard */,
+				A87A547522A26CE500AD12EE /* RegisterViewController.swift */,
 				A87436C7228C117E001F31D1 /* AppDelegate.swift */,
 				A87436C9228C117E001F31D1 /* ViewController.swift */,
+				A857C9A822A00EA900DA7C52 /* CategoryViewController.swift */,
+				A857C9AA22A0169500DA7C52 /* CategoryTableViewCell.swift */,
 				A87436D1228C117E001F31D1 /* Assets.xcassets */,
+				A857C9A622A00D5F00DA7C52 /* CustomerButton.swift */,
 				A87436D3228C117E001F31D1 /* LaunchScreen.storyboard */,
 				A87436D6228C117E001F31D1 /* Info.plist */,
 				A87436CE228C117E001F31D1 /* backofficeTest.xcdatamodeld */,
@@ -146,9 +170,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A857C9A922A00EA900DA7C52 /* CategoryViewController.swift in Sources */,
+				A87A547622A26CE500AD12EE /* RegisterViewController.swift in Sources */,
+				A857C9B122A0D80C00DA7C52 /* ManagementViewController.swift in Sources */,
 				A87436CA228C117E001F31D1 /* ViewController.swift in Sources */,
+				A857C9A722A00D5F00DA7C52 /* CustomerButton.swift in Sources */,
+				A857C9B322A0D84600DA7C52 /* ManagementTableViewCell.swift in Sources */,
+				A857C9AD22A0D22500DA7C52 /* ChatViewController.swift in Sources */,
 				A87436D0228C117E001F31D1 /* backofficeTest.xcdatamodeld in Sources */,
+				A857C9AF22A0D25700DA7C52 /* ChatTableViewCell.swift in Sources */,
 				A87436C8228C117E001F31D1 /* AppDelegate.swift in Sources */,
+				A857C9AB22A0169500DA7C52 /* CategoryTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

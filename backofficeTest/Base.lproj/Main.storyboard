@@ -406,11 +406,13 @@
             </objects>
             <point key="canvasLocation" x="-109" y="1077"/>
         </scene>
-        <!--首頁-->
+        <!--Navigation Controller-->
         <scene sceneID="InT-0j-gbW">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="IJE-yA-tdz" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="首頁" image="house" id="9hc-tV-VUW"/>
+                    <tabBarItem key="tabBarItem" title="" image="Home" selectedImage="Home-select" id="9hc-tV-VUW">
+                        <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="4zY-x0-E44">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -425,11 +427,13 @@
             </objects>
             <point key="canvasLocation" x="1947.826086956522" y="-317.41071428571428"/>
         </scene>
-        <!--上架-->
+        <!--Navigation Controller-->
         <scene sceneID="nWO-wC-6pH">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="U7I-4x-0Vi" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="上架" image="bag" id="Cyh-KJ-Kbr"/>
+                    <tabBarItem key="tabBarItem" title="" image="bag" selectedImage="bag-select" id="Cyh-KJ-Kbr">
+                        <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="6sL-g7-q5x">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -447,8 +451,10 @@
     </scenes>
     <resources>
         <image name="ADD1" width="100" height="100"/>
-        <image name="bag" width="30" height="30"/>
-        <image name="house" width="30" height="30"/>
+        <image name="Home" width="31" height="30.5"/>
+        <image name="Home-select" width="31" height="30.5"/>
+        <image name="bag" width="30.5" height="30.5"/>
+        <image name="bag-select" width="30.5" height="30.5"/>
     </resources>
     <color key="tintColor" red="0.94258779290000005" green="0.52374685200000004" blue="0.30980392159999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
 </document>

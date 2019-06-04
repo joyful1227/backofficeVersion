@@ -123,11 +123,12 @@
             </objects>
             <point key="canvasLocation" x="1563.768115942029" y="13.392857142857142"/>
         </scene>
-        <!--客服-->
+        <!--Navigation Controller-->
         <scene sceneID="OSg-Tx-YP2">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="b9z-Qm-a5h" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="客服" image="speech-bubble-2" id="RVB-V3-emt">
+                    <tabBarItem key="tabBarItem" title="" image="Chat" selectedImage="Chat-select" id="RVB-V3-emt">
+                        <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
                         <color key="badgeColor" red="0.94258779290000005" green="0.52374685200000004" blue="0.30980392159999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </tabBarItem>
                     <toolbarItems/>
@@ -147,7 +148,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="speech-bubble-2" width="30" height="30"/>
+        <image name="Chat" width="30.5" height="30.5"/>
+        <image name="Chat-select" width="30.5" height="30.5"/>
     </resources>
     <color key="tintColor" red="0.94258779290000005" green="0.52374685200000004" blue="0.30980392159999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
 </document>

@@ -133,11 +133,12 @@
             </objects>
             <point key="canvasLocation" x="1913" y="82"/>
         </scene>
-        <!--管理-->
+        <!--Navigation Controller-->
         <scene sceneID="WWM-ED-fqz">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="KRE-Dw-b4g" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="管理" image="user" id="w3Z-if-XmJ">
+                    <tabBarItem key="tabBarItem" title="" image="Profile" selectedImage="Profile-select" id="w3Z-if-XmJ">
+                        <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
                         <color key="badgeColor" red="0.94258779290000005" green="0.52374685200000004" blue="0.30980392159999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </tabBarItem>
                     <toolbarItems/>
@@ -157,7 +158,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="user" width="30" height="30"/>
+        <image name="Profile" width="30.5" height="30.5"/>
+        <image name="Profile-select" width="30.5" height="30.5"/>
     </resources>
     <color key="tintColor" red="0.94258779290000005" green="0.52374685200000004" blue="0.30980392159999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
 </document>

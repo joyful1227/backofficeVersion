@@ -127,7 +127,7 @@
         <scene sceneID="OSg-Tx-YP2">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="b9z-Qm-a5h" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="Chat" selectedImage="Chat-select" id="RVB-V3-emt">
+                    <tabBarItem key="tabBarItem" title="" image="faq" selectedImage="Chat-select" id="RVB-V3-emt">
                         <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
                         <color key="badgeColor" red="0.94258779290000005" green="0.52374685200000004" blue="0.30980392159999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </tabBarItem>
@@ -148,8 +148,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Chat" width="30.5" height="30.5"/>
         <image name="Chat-select" width="30.5" height="30.5"/>
+        <image name="faq" width="30.5" height="30.5"/>
     </resources>
     <color key="tintColor" red="0.94258779290000005" green="0.52374685200000004" blue="0.30980392159999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
 </document>

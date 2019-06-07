@@ -39,11 +39,25 @@ class Product: Codable {
 //    }
     
     
-    public init(_ product_id: Int, _ product_name: String, _ product_image: String, _ price: Int) {
+    public init(_ product_id: Int, _ product_name: String, _ product_image: String, _ price: Int, _ category_id: Int, _ product_status: Int) {
         self.product_id = product_id
         self.product_name = product_name
         self.product_image = product_image
         self.price = price
+        self.category_id = category_id
+        self.product_status = product_status
+        //        self.product_image2 = product_image2
+        //        self.banner_image = banner_image
+    }
+    
+    public init(_ product_id: Int, _ product_name: String, _ product_image: String, _ price: Int, _ category_id: Int, _ category_name: String , _ product_status: Int) {
+        self.product_id = product_id
+        self.product_name = product_name
+        self.product_image = product_image
+        self.price = price
+        self.category_id = category_id
+        self.category_name = category_name
+        self.product_status = product_status
         //        self.product_image2 = product_image2
         //        self.banner_image = banner_image
     }

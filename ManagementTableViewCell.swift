@@ -12,6 +12,9 @@ class ManagementTableViewCell: UITableViewCell {
 
     
     
+    
+    @IBOutlet weak var orderButton: UIButton!
+    
     @IBOutlet weak var orderImage: UIImageView!
     
     

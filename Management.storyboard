@@ -59,9 +59,8 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dSu-Bz-qBC">
+                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dSu-Bz-qBC">
                                                     <rect key="frame" x="336" y="62" width="47" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" red="1" green="0.56792508080000004" blue="0.36867178969999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <inset key="contentEdgeInsets" minX="0.0" minY="5" maxX="0.0" maxY="5"/>
@@ -76,7 +75,12 @@
                                                 </button>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="dSu-Bz-qBC" secondAttribute="trailing" constant="31" id="0k2-w8-PZH"/>
+                                            <constraint firstAttribute="bottom" secondItem="dSu-Bz-qBC" secondAttribute="bottom" constant="11" id="tSg-zc-1nG"/>
+                                        </constraints>
                                         <connections>
+                                            <outlet property="orderButton" destination="dSu-Bz-qBC" id="DT3-SD-n7y"/>
                                             <outlet property="orderImage" destination="0wE-cb-D8R" id="9kX-1q-S2r"/>
                                             <segue destination="9mv-L5-FR4" kind="show" id="VMd-hM-4Il"/>
                                         </connections>

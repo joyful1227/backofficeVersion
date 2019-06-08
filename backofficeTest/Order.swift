@@ -9,14 +9,26 @@
 import Foundation
 import UIKit
 
-class Order: Cargo {
+class Order: Codable {
     
+    
+    var cargoID: Int
+    var name: String
+    var price: Int
+    var image: String
+    var size: String
     var isarrived :Bool
     var userID : Int
+    
     init(cargoID : Int,name: String, price: Int, image: String,userID : Int, size : String) {
-        
+        self.cargoID = cargoID
+        self.name = name
+        self.price = price
+        self.image = image
         self.userID = userID
         self.isarrived = true
-        super.init(cargoID: cargoID, name: name, price: price, image: image, size : size)
+        self.size = size
+        
+        //super.init(cargoID: cargoID, name: name, price: price, image: image, size : size)
     }
 }

@@ -1,24 +1,15 @@
 //
-//  ManagementTableViewCell.swift
+//  ManagementDetailTableViewCell.swift
 //  backofficeTest
 //
-//  Created by Joy on 2019/5/31.
+//  Created by Joy on 2019/6/8.
 //  Copyright © 2019 Joy. All rights reserved.
 //
 
 import UIKit
 
-class ManagementTableViewCell: UITableViewCell {
+class ManagementDetailTableViewCell: UITableViewCell {
 
-    
-    
-    @IBOutlet weak var orderImage: UIImageView!
-    
-    
-    
-    
-    
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -13,7 +13,7 @@ class Order: Cargo {
     
     var isarrived :Bool
     var userID : Int
-    init(cargoID : Int,name: String, price: Int, image: UIImage,userID : Int, size : Size) {
+    init(cargoID : Int,name: String, price: Int, image: String,userID : Int, size : String) {
         
         self.userID = userID
         self.isarrived = true

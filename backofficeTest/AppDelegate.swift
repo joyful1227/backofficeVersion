@@ -16,7 +16,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        let tabBarImage = UIImage(named: "tabBarBackGround")
+        UITabBar.appearance().backgroundImage = tabBarImage
+        UITabBar.appearance().shadowImage = tabBarImage
+        
+        
         return true
     }
 

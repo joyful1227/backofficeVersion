@@ -38,6 +38,8 @@
 		A8BBBD0622A832730035B149 /* Evaluation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BBBD0522A832730035B149 /* Evaluation.swift */; };
 		A8BBBD0822A832D90035B149 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BBBD0722A832D90035B149 /* Common.swift */; };
 		A8BBBD0A22A83B800035B149 /* AddProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BBBD0922A83B800035B149 /* AddProductViewController.swift */; };
+		A8BBBD0C22AB610F0035B149 /* ManagementDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BBBD0B22AB610F0035B149 /* ManagementDetailViewController.swift */; };
+		A8BBBD0E22AB613B0035B149 /* ManagementDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BBBD0D22AB613B0035B149 /* ManagementDetailTableViewCell.swift */; };
 		F701244B7D44192670032AD5 /* Pods_backofficeTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F1FE5FC0659838665C13679 /* Pods_backofficeTest.framework */; };
 /* End PBXBuildFile section */
 
@@ -77,6 +79,8 @@
 		A8BBBD0522A832730035B149 /* Evaluation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Evaluation.swift; sourceTree = "<group>"; };
 		A8BBBD0722A832D90035B149 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		A8BBBD0922A83B800035B149 /* AddProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProductViewController.swift; sourceTree = "<group>"; };
+		A8BBBD0B22AB610F0035B149 /* ManagementDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagementDetailViewController.swift; sourceTree = "<group>"; };
+		A8BBBD0D22AB613B0035B149 /* ManagementDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagementDetailTableViewCell.swift; sourceTree = "<group>"; };
 		C9A1C7BE0FD2767992B2D761 /* Pods-backofficeTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-backofficeTest.debug.xcconfig"; path = "Target Support Files/Pods-backofficeTest/Pods-backofficeTest.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -106,7 +110,6 @@
 				C9A1C7BE0FD2767992B2D761 /* Pods-backofficeTest.debug.xcconfig */,
 				A879128F99B0F5F6936B1353 /* Pods-backofficeTest.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -119,6 +122,8 @@
 				A857C9A2229EAD9A00DA7C52 /* Management.storyboard */,
 				A857C9B022A0D80C00DA7C52 /* ManagementViewController.swift */,
 				A857C9B222A0D84600DA7C52 /* ManagementTableViewCell.swift */,
+				A8BBBD0B22AB610F0035B149 /* ManagementDetailViewController.swift */,
+				A8BBBD0D22AB613B0035B149 /* ManagementDetailTableViewCell.swift */,
 				A87436C6228C117E001F31D1 /* backofficeTest */,
 				A87436C5228C117E001F31D1 /* Products */,
 				1473AF5236E71DBF42377F7C /* Pods */,
@@ -299,6 +304,7 @@
 			files = (
 				A8BBBCF622A800070035B149 /* Size.swift in Sources */,
 				A857C9A922A00EA900DA7C52 /* CategoryViewController.swift in Sources */,
+				A8BBBD0C22AB610F0035B149 /* ManagementDetailViewController.swift in Sources */,
 				A87A547622A26CE500AD12EE /* RegisterViewController.swift in Sources */,
 				A8BBBD0622A832730035B149 /* Evaluation.swift in Sources */,
 				A857C9B122A0D80C00DA7C52 /* ManagementViewController.swift in Sources */,
@@ -317,6 +323,7 @@
 				A8BBBCF022A7FF0E0035B149 /* Mylike.swift in Sources */,
 				A857C9AD22A0D22500DA7C52 /* ChatViewController.swift in Sources */,
 				A87436D0228C117E001F31D1 /* backofficeTest.xcdatamodeld in Sources */,
+				A8BBBD0E22AB613B0035B149 /* ManagementDetailTableViewCell.swift in Sources */,
 				A857C9AF22A0D25700DA7C52 /* ChatTableViewCell.swift in Sources */,
 				A87436C8228C117E001F31D1 /* AppDelegate.swift in Sources */,
 				A8BBBD0A22A83B800035B149 /* AddProductViewController.swift in Sources */,

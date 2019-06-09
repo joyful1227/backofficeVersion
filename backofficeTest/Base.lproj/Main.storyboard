@@ -443,9 +443,10 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" red="0.94258779290000005" green="0.52374685200000004" blue="0.30980392159999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        <color key="selectedImageTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" red="0.94258779290000005" green="0.52374685200000004" blue="0.30980392159999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </tabBar>
                     <connections>
+                        <outlet property="tabBar" destination="5TW-j3-tmC" id="lzm-m8-hzw"/>
                         <segue destination="IJE-yA-tdz" kind="relationship" relationship="viewControllers" id="1ks-2M-DuC"/>
                         <segue destination="U7I-4x-0Vi" kind="relationship" relationship="viewControllers" id="Ueh-1T-bYh"/>
                         <segue destination="tVE-R8-w6l" kind="relationship" relationship="viewControllers" id="BRq-d9-bs9"/>

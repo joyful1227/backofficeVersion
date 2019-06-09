@@ -17,6 +17,8 @@ class ManagementTableViewCell: UITableViewCell {
     
     @IBOutlet weak var orderImage: UIImageView!
     
+    @IBOutlet weak var orderidLabel: UILabel!
+    @IBOutlet weak var orderstatusLabel: UILabel!
     
     
     

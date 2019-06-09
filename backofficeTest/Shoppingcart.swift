@@ -11,15 +11,19 @@ import UIKit
 
 class Shoppingcart{
     
+    var product_id:Int!
     var name: String!
     var price: Int!
-    var image: UIImage!
+    var image: String!
+    var size : String!
     var amount: Int!
     
-    init(_ name: String,_  price: Int,_  image: UIImage,_ amount: Int) {
+    init(product_id: Int, name: String, price: Int, image: String!, size: String, amout: Int) {
+        self.product_id = product_id
         self.name = name
         self.price = price
         self.image = image
-        self.amount = amount
+        self.size = size
+        self.amount = amout
     }
 }

@@ -51,12 +51,13 @@ class AddProductViewController: UIViewController {
             if categories != nil {
                 self.backcategory = categories!
                 //print(categories as! Category)
+                print("backcategory.count = ")
+                print(self.backcategory.count)
+                DispatchQueue.main.async {
+                    self.picker.reloadAllComponents()
+                    self.categoryTextField.text = self.backcategory.first?.category_name
+                }
             }
-        }
-        
-        for i in backcategory {
-            backcategoryName.append(i.category_name!)
-            print("category_name = \(i.category_name!)")
         }
         
         
@@ -158,13 +159,14 @@ class AddProductViewController: UIViewController {
             showproducts(requestParam, type: Int.self) { (idArray) in
                // print("id = \(String(describing: id))")
                 if idArray != nil {
-                  // self.backids = idArray!
-                  //  print("self.backids = \(self.backids)")
+                   self.backids = idArray!
+                    print("backids count = \(self.backids.count)")
+
                 }
             }
             
-          //  let id = backids[0]
-          //  print(id)
+             // let id = backids.first
+             // print("id = \(id)")
             let alertController = UIAlertController(title: "商品已成功上架", message: nil, preferredStyle: .alert)
             let okAlert = UIAlertAction(title: "確定", style: .default) { (action) in
             
@@ -234,7 +236,7 @@ extension AddProductViewController: UIImagePickerControllerDelegate, UINavigatio
         
         
         dismiss(animated: true, completion: nil)
-        //productIMGbk.image = nil
+        
     }
     
     //取消
@@ -261,7 +263,7 @@ extension AddProductViewController: UIPickerViewDelegate, UIPickerViewDataSource
     //裡面有幾個項目
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         if categoryTextField.isFirstResponder {
-            return backcategoryName.count
+            return backcategory.count
         }else { //sizeTextField.isFirstResponder
             return dataforSize.count
         }
@@ -270,7 +272,7 @@ extension AddProductViewController: UIPickerViewDelegate, UIPickerViewDataSource
     //設定每列要顯示的內容
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         if categoryTextField.isFirstResponder {
-            return backcategoryName[row]
+            return backcategory[row].category_name
         }else { //sizeTextField.isFirstResponder
             return dataforSize[row]
         }
@@ -279,7 +281,7 @@ extension AddProductViewController: UIPickerViewDelegate, UIPickerViewDataSource
     //選到那列要做的事情
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if categoryTextField.isFirstResponder {
-           categoryTextField.text = backcategoryName[row]
+           categoryTextField.text = backcategory[row].category_name
         }else { //sizeTextField.isFirstResponder
              sizeTextField.text = dataforSize[row]
         }

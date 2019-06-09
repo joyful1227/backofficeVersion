@@ -14,16 +14,27 @@ class ManagementViewController: UIViewController {
     
     @IBOutlet weak var OrderStatusSegmented: UISegmentedControl!
     
+    @IBOutlet weak var orderTableView: UITableView!
     
     
     var segmentValue = "待出貨"
-    var order = Order(cargoID: 1, name: "Joy", price: 500, image: "123454321", userID: 1, size: "S")
-     //init(cargoID : Int,name: String, price: Int, image: String,userID : Int, size : String)
-    
+    var orders = [Ordermain]()
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        var requestParam = [String:String]()
+        requestParam["action"] = "getAllOrder"
+        showproducts(requestParam, type: Ordermain.self) { (backOrders) in
+            if backOrders != nil {
+                self.orders  = backOrders!      // [ 訂單1, 訂單2, 訂單３ ]
+                  print(self.orders.first?.address ?? "")
+                DispatchQueue.main.async {
+                   self.orderTableView.reloadData()
+                }
+            }
+        }
+        
         // Do any additional setup after loading the view.
     }
     
@@ -50,14 +61,14 @@ class ManagementViewController: UIViewController {
         
         
         //物件要轉Json格式，才能變成字串（因為要放到Dictionary）
-        let jsondata = try! JSONEncoder().encode(order)
-        let jsonString = String(data: jsondata, encoding: String.Encoding.utf8)
+        //let jsondata = try! JSONEncoder().encode(order)
+       // let jsonString = String(data: jsondata, encoding: String.Encoding.utf8)
        
-        requestParam["order"] = jsonString
+       // requestParam["order"] = jsonString
         
-        showproducts(requestParam, type: String.self) { (items) in
+        //showproducts(requestParam, type: String.self) { (items) in
             //..
-        }
+       // }
         
         
     }
@@ -83,7 +94,8 @@ extension ManagementViewController: UITableViewDelegate, UITableViewDataSource {
     
     //項目數
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        print("order.count = \(orders.count)")
+        return orders.count
     }
     
     //資料內容顯示來源
@@ -91,9 +103,29 @@ extension ManagementViewController: UITableViewDelegate, UITableViewDataSource {
          let cell = tableView.dequeueReusableCell(withIdentifier: "orderCell") as! ManagementTableViewCell
            // cell = ManagementTableViewCell(style: .default, reuseIdentifier: "orderCell")
         
+        let order = orders[indexPath.row]
+        cell.orderidLabel.text = "訂單編號：\(order.order_id!)"
+        
+        
+        
+        
+        switch order.order_status {   // 0=待出貨  1=已出貨  2=已送達  3=取消  4=已退貨
+        case 0:
+            cell.orderstatusLabel.text = "訂單狀態：待出貨"
+        case 1:
+            cell.orderstatusLabel.text = "訂單狀態：已出貨"
+        case 2:
+            cell.orderstatusLabel.text = "訂單狀態：已送達"
+        case 3:
+            cell.orderstatusLabel.text = "訂單狀態：取消"
+        case 4:
+            cell.orderstatusLabel.text = "訂單狀態：已退貨"
+        default:
+            print("order_status  trans to text is fail")
+        }
+        
         
         cell.accessoryType = .disclosureIndicator   //" > "
-        cell.orderButton.tag = indexPath.section+indexPath.row
         cell.orderButton.addTarget(self, action: #selector(orderButtonAction(sender:)), for: .touchUpInside)
         
         
@@ -104,7 +136,7 @@ extension ManagementViewController: UITableViewDelegate, UITableViewDataSource {
     
     //cell 高度
     private func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 50
+        return 100
     }
     
     //選中

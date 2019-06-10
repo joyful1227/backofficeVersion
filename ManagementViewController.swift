@@ -105,7 +105,7 @@ extension ManagementViewController: UITableViewDelegate, UITableViewDataSource {
         
         let order = orders[indexPath.row]
         cell.orderidLabel.text = "訂單編號：\(order.order_id!)"
-        
+        cell.orderTotalPriceLabel.text = "訂單總金額：\(order.totalprice!)元"
         
         
         

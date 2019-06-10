@@ -400,10 +400,10 @@
             </objects>
             <point key="canvasLocation" x="3636.2318840579715" y="-315.40178571428572"/>
         </scene>
-        <!--View Controller-->
+        <!--Product Page View Controller-->
         <scene sceneID="Azn-Ml-hLc">
             <objects>
-                <viewController id="QJn-OI-fwq" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProductPage" id="QJn-OI-fwq" customClass="ProductPageViewController" customModule="backofficeTest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="n3P-wg-JfG">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

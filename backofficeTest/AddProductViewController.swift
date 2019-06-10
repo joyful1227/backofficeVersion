@@ -25,15 +25,18 @@ class AddProductViewController: UIViewController {
     @IBOutlet weak var inputProductPrice: UITextField!
     @IBOutlet weak var productIMG1: UIButton!
     
+    let activityIndicatorView = UIActivityIndicatorView(style: .gray)
     var image: UIImage?
 
     var backids = Array<Int>() //接收回傳的id陣列
     var products = [Product]() //商品做成物件
-    var backcategory = Array<Category>()
-    var backcategoryName = Array<String>()
-   
+    var backcategory = Array<Category>()   //接收回傳分類陣列
+    var backcategoryName = Array<String>() //接收回傳分類名稱
+    
+    
+    
     var picker = UIPickerView()
-    var dataForCategory = ["1","2","3"]
+    //var dataForCategory = ["1","2","3"]
     var dataforSize = ["S","M","L"]
     
     
@@ -153,25 +156,50 @@ class AddProductViewController: UIViewController {
             //物件要轉Json格式，才能變成字串（因為要放到Dictionary）
             let productJson = try! JSONEncoder().encode(product)
             let productString = String(data: productJson, encoding: String.Encoding.utf8)
-            
             requestParam["product"] = productString
             
+            
+            
+            activityIndicatorView.center = view.center
+            activityIndicatorView.startAnimating()
             showproducts(requestParam, type: Int.self) { (idArray) in
-               // print("id = \(String(describing: id))")
+                
+                DispatchQueue.main.async {
+                    self.activityIndicatorView.removeFromSuperview()
+                }
+                
+                
                 if idArray != nil {
-                   self.backids = idArray!
+                   
+                    self.backids = idArray!
                     print("backids count = \(self.backids.count)")
-
+                    if let id = self.backids.first {
+                         print("id = \(id)")
+                       
+                        let alertController = UIAlertController(title: "商品已成功上架", message: nil, preferredStyle: .alert)
+                        let okAlert = UIAlertAction(title: "確定", style: .default) { (action) in
+                            self.goToProductPage(id)
+                        }
+                        alertController.addAction(okAlert)
+                    }
                 }
             }
-            
-             // let id = backids.first
-             // print("id = \(id)")
-            let alertController = UIAlertController(title: "商品已成功上架", message: nil, preferredStyle: .alert)
-            let okAlert = UIAlertAction(title: "確定", style: .default) { (action) in
-            
-            }
-            alertController.addAction(okAlert)
+        }
+    }
+    
+    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if let productPageController = storyboard?.instantiateViewController(withIdentifier: "ProductPage") as? ProductPageViewController {
+//            //productPageController.id =
+//            present(productPageController, animated: true, completion: nil)
+//        }
+//
+//    }
+    
+    func goToProductPage(_ id: Int) {
+        if let productPageController = tabBarController?.viewControllers?[0] as? ProductPageViewController{
+            productPageController.id = id
+            tabBarController?.selectedIndex = 0
         }
         
     }

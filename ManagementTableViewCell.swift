@@ -19,7 +19,7 @@ class ManagementTableViewCell: UITableViewCell {
     
     @IBOutlet weak var orderidLabel: UILabel!
     @IBOutlet weak var orderstatusLabel: UILabel!
-    
+    @IBOutlet weak var orderTotalPriceLabel: UILabel!
     
     
     

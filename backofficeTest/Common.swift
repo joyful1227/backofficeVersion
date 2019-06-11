@@ -11,10 +11,18 @@ import UIKit
 
 // 實機
 // let common_url = "http://192.168.0.101:8080/Book_MySQL_Web/"
-
-
 // 模擬器
 let common_url = "http://127.0.0.1:8080/Thunder_Web/"
+
+
+
+// 實機
+// let common_url = "http://192.168.0.101:8080/Book_MySQL_Web/"192.168.50.75。127.0.0.1  192.168.196.29  192.168.0.105
+// 模擬器
+let chatcommon_url = "http://127.0.0.1:8080/Thunder_Web/Chatserver/"
+
+
+
 
 /**
  向server發出請求，並在取得回應後執行特定程式

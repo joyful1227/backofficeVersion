@@ -16,6 +16,7 @@ var shoppingcarts = [Shoppingcart]()
 var products = [Product]()
 var categorys = [Category]()
 var mylikes = [Product]()
+var chats = [Chat]()
 let url_server = URL(string: common_url + "ThunderServlet")
 
 

@@ -41,7 +41,7 @@
 		A8BBBD1622AD04E30035B149 /* Ordermain.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BBBD1522AD04E30035B149 /* Ordermain.swift */; };
 		A8BBBD1822AD05560035B149 /* Feedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BBBD1722AD05560035B149 /* Feedback.swift */; };
 		A8BBBD1A22AD058E0035B149 /* Orderdetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BBBD1922AD058E0035B149 /* Orderdetail.swift */; };
-		A8BBBD1E22AEB2630035B149 /* ProductPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BBBD1D22AEB2630035B149 /* ProductPageViewController.swift */; };
+		A8BBBD2222AF3FF90035B149 /* ProductPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BBBD2122AF3FF90035B149 /* ProductPageViewController.swift */; };
 		F701244B7D44192670032AD5 /* Pods_backofficeTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F1FE5FC0659838665C13679 /* Pods_backofficeTest.framework */; };
 /* End PBXBuildFile section */
 
@@ -84,7 +84,7 @@
 		A8BBBD1522AD04E30035B149 /* Ordermain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ordermain.swift; sourceTree = "<group>"; };
 		A8BBBD1722AD05560035B149 /* Feedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feedback.swift; sourceTree = "<group>"; };
 		A8BBBD1922AD058E0035B149 /* Orderdetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Orderdetail.swift; sourceTree = "<group>"; };
-		A8BBBD1D22AEB2630035B149 /* ProductPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProductPageViewController.swift; path = /Users/joy/Downloads/testplayground/backofficeTest/backofficeTest/ProductPageViewController.swift; sourceTree = "<absolute>"; };
+		A8BBBD2122AF3FF90035B149 /* ProductPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductPageViewController.swift; sourceTree = "<group>"; };
 		C9A1C7BE0FD2767992B2D761 /* Pods-backofficeTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-backofficeTest.debug.xcconfig"; path = "Target Support Files/Pods-backofficeTest/Pods-backofficeTest.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -152,7 +152,7 @@
 				A87436C9228C117E001F31D1 /* ViewController.swift */,
 				A857C9A822A00EA900DA7C52 /* CategoryViewController.swift */,
 				A857C9AA22A0169500DA7C52 /* CategoryTableViewCell.swift */,
-				A8BBBD1D22AEB2630035B149 /* ProductPageViewController.swift */,
+				A8BBBD2122AF3FF90035B149 /* ProductPageViewController.swift */,
 				A8BBBD0922A83B800035B149 /* AddProductViewController.swift */,
 				A87436D1228C117E001F31D1 /* Assets.xcassets */,
 				A8BBBCEE22A7FD950035B149 /* class */,
@@ -335,7 +335,7 @@
 				A857C9AF22A0D25700DA7C52 /* ChatTableViewCell.swift in Sources */,
 				A87436C8228C117E001F31D1 /* AppDelegate.swift in Sources */,
 				A8BBBD0A22A83B800035B149 /* AddProductViewController.swift in Sources */,
-				A8BBBD1E22AEB2630035B149 /* ProductPageViewController.swift in Sources */,
+				A8BBBD2222AF3FF90035B149 /* ProductPageViewController.swift in Sources */,
 				A8BBBCF822A800660035B149 /* Notice.swift in Sources */,
 				A857C9AB22A0169500DA7C52 /* CategoryTableViewCell.swift in Sources */,
 			);

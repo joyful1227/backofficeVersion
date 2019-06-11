@@ -197,7 +197,7 @@ class AddProductViewController: UIViewController {
 //    }
     
     func goToProductPage(_ id: Int) {
-        if let productPageController = tabBarController?.viewControllers?[0] as? ProductPageViewController{
+        if let productPageController = tabBarController?.viewControllers?[0] as? ProductPageViewController {
             productPageController.id = id
             tabBarController?.selectedIndex = 0
         }
@@ -257,7 +257,7 @@ extension AddProductViewController: UIImagePickerControllerDelegate, UINavigatio
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let photo = info[.originalImage] as? UIImage {
           image = photo
-         // UIImageWriteToSavedPhotosAlbum(photo, nil, nil, nil)
+          //UIImageWriteToSavedPhotosAlbum(photo, nil, nil, nil)
           productIMG1.setImage(photo, for: .normal)
           productIMG1.imageView?.contentMode = .scaleAspectFit
         }

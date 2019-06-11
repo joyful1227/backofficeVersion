@@ -24,7 +24,7 @@ class ManagementViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         var requestParam = [String:String]()
-        requestParam["action"] = "getAllOrder"
+        requestParam["action"] = "getAllorders"
         showproducts(requestParam, type: Ordermain.self) { (backOrders) in
             if backOrders != nil {
                 self.orders  = backOrders!      // [ 訂單1, 訂單2, 訂單３ ]

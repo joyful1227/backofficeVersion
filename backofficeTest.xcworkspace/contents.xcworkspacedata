@@ -2,9 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/joy/Downloads/testplayground/backofficeTest/backofficeTest/ProductPageViewController.swift">
-   </FileRef>
-   <FileRef
       location = "group:backofficeTest.xcodeproj">
    </FileRef>
    <FileRef

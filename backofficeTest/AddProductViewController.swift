@@ -178,24 +178,21 @@ class AddProductViewController: UIViewController {
                        
                         let alertController = UIAlertController(title: "商品已成功上架", message: nil, preferredStyle: .alert)
                         let okAlert = UIAlertAction(title: "確定", style: .default) { (action) in
-                            self.goToProductPage(id)
+                                self.goToProductPage(id)
+                            
                         }
                         alertController.addAction(okAlert)
+                        DispatchQueue.main.async {
+                            self.present(alertController, animated: true, completion: nil)
+                        }
+                        
                     }
                 }
             }
         }
     }
     
-    
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if let productPageController = storyboard?.instantiateViewController(withIdentifier: "ProductPage") as? ProductPageViewController {
-//            //productPageController.id =
-//            present(productPageController, animated: true, completion: nil)
-//        }
-//
-//    }
-    
+
     func goToProductPage(_ id: Int) {
         if let productPageController = tabBarController?.viewControllers?[0] as? ProductPageViewController {
             productPageController.id = id

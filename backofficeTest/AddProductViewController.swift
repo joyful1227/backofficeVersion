@@ -33,6 +33,8 @@ class AddProductViewController: UIViewController {
     var backcategory = Array<Category>()   //接收回傳分類陣列
     var backcategoryName = Array<String>() //接收回傳分類名稱
     
+    var cateid = 0
+    var id = 0
     
     
     var picker = UIPickerView()
@@ -148,11 +150,23 @@ class AddProductViewController: UIViewController {
         //當所有資料合法時---------
         if isValid == true {
             let base64image = image?.jpegData(compressionQuality: 1.0)?.base64EncodedString()
-            let product = Product(0, inproductName, base64image!, Int(inproductPrice)!, 1, 1)
+            
+            //透過名字查id
+            //[1,4]
+            //[上衣,下衣,褲子]
+            
+            for i in backcategory {
+                if i.category_name == categoryTextField.text {
+                    cateid = i.category_id ?? 0
+                }
+            }
             
             
-            //public init(_ product_id: Int, _ product_name: String, _ product_image: String, _ price: Int, _ category_id: Int, _ product_status: Int)
+            let product = Product(0, inproductName, base64image!, sizeTextField.text!, Int(inproductPrice)!, cateid, 1)
             
+            
+  //  public init(_ product_id: Int, _ product_name: String, _ product_image: String, _ size: String , _ price: Int, _ category_id: Int, _ category_name: String,_ product_status:Int) {
+            //sizeTextField
             //物件要轉Json格式，才能變成字串（因為要放到Dictionary）
             let productJson = try! JSONEncoder().encode(product)
             let productString = String(data: productJson, encoding: String.Encoding.utf8)
@@ -175,10 +189,11 @@ class AddProductViewController: UIViewController {
                     print("backids count = \(self.backids.count)")
                     if let id = self.backids.first {
                          print("id = \(id)")
-                       
+                       self.id = id
                         let alertController = UIAlertController(title: "商品已成功上架", message: nil, preferredStyle: .alert)
                         let okAlert = UIAlertAction(title: "確定", style: .default) { (action) in
-                                self.goToProductPage(id)
+                                //self.tabBarController?.selectedIndex = 0
+                                self.performSegue(withIdentifier: "goToProductSegue", sender: self)
                             
                         }
                         alertController.addAction(okAlert)
@@ -193,13 +208,24 @@ class AddProductViewController: UIViewController {
     }
     
 
-    func goToProductPage(_ id: Int) {
-        if let productPageController = tabBarController?.viewControllers?[0] as? ProductPageViewController {
-            productPageController.id = id
-            tabBarController?.selectedIndex = 0
-        }
-        
+//    func goToProductPage(_ id: Int) {
+//        指定為tab bar 第一頁
+//        if let navController = tabBarController?.viewControllers?[0] as? UINavigationController,
+//            let productPageController = navController.viewControllers.first as? ProductPageViewController {
+//            productPageController.id = id
+//            tabBarController?.selectedIndex = 0
+//        if let productPageController = storyboard?.instantiateViewController(withIdentifier: "ProductPage") as? ProductPageViewController {
+//            print("enter if let")
+//            present(productPageController, animated: true, completion: nil)
+//        }
+//    }
+            
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        print("enter func")
+        let controller = segue.destination as! ProductPageViewController
+        controller.id = id
     }
+ 
     
 }
 

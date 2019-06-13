@@ -183,16 +183,20 @@ class ProductModifyViewController: UIViewController {
                 DispatchQueue.main.async {
                     self.activityIndicatorView.removeFromSuperview()
                 }
-                
+
                 
                 if idArray != nil {
                     let alertController = UIAlertController(title: nil, message: "修改成功", preferredStyle: .alert)
                     self.present(alertController, animated: true, completion:nil)
                     DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5) {
-                        self.presentedViewController?.dismiss(animated: false, completion: nil)
-                        self.dismiss(animated: true, completion: nil)
+                        self.presentedViewController?.dismiss(animated: false
+                            , completion:nil)
+                        DispatchQueue.main.async { self.navigationController?.popViewController(animated: false)
+                        }
                     }
-                  
+                    
+                    
+
                 }
             
            }

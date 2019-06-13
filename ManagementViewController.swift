@@ -28,7 +28,7 @@ class ManagementViewController: UIViewController {
         showproducts(requestParam, type: Ordermain.self) { (backOrders) in
             if backOrders != nil {
                 self.orders  = backOrders!      // [ 訂單1, 訂單2, 訂單３ ]
-                  print(self.orders.first?.address ?? "")
+                  //print(self.orders.first?.address ?? "")
                 DispatchQueue.main.async {
                    self.orderTableView.reloadData()
                 }
@@ -58,7 +58,7 @@ class ManagementViewController: UIViewController {
         
         var requestParam = [String:String]()
         requestParam["action"] = "changeToShip"
-        
+        //requestParam["orderid"] =
         
         //物件要轉Json格式，才能變成字串（因為要放到Dictionary）
         //let jsondata = try! JSONEncoder().encode(order)
@@ -75,6 +75,10 @@ class ManagementViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         //..取order id傳給下一頁 去取值
+        if let row = orderTableView.indexPathForSelectedRow?.row {
+           let controller = segue.destination as! ManagementDetailViewController
+           controller.order = orders[row]
+        }
     }
     
 
@@ -143,6 +147,8 @@ extension ManagementViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
     }
+    
+    
     
     
 }

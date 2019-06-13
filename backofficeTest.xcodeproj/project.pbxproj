@@ -27,6 +27,7 @@
 		A87436D2228C117E001F31D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A87436D1228C117E001F31D1 /* Assets.xcassets */; };
 		A87436D5228C117E001F31D1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A87436D3228C117E001F31D1 /* LaunchScreen.storyboard */; };
 		A87A547622A26CE500AD12EE /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87A547522A26CE500AD12EE /* RegisterViewController.swift */; };
+		A89CC49822B1633A00DD99F6 /* ProductModifyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89CC49722B1633A00DD99F6 /* ProductModifyViewController.swift */; };
 		A8BBBCED22A7FB000035B149 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BBBCEC22A7FB000035B149 /* Product.swift */; };
 		A8BBBCF022A7FF0E0035B149 /* Mylike.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BBBCEF22A7FF0E0035B149 /* Mylike.swift */; };
 		A8BBBCF422A7FFDB0035B149 /* Cargo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BBBCF322A7FFDB0035B149 /* Cargo.swift */; };
@@ -74,6 +75,7 @@
 		A87436D6228C117E001F31D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A879128F99B0F5F6936B1353 /* Pods-backofficeTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-backofficeTest.release.xcconfig"; path = "Target Support Files/Pods-backofficeTest/Pods-backofficeTest.release.xcconfig"; sourceTree = "<group>"; };
 		A87A547522A26CE500AD12EE /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		A89CC49722B1633A00DD99F6 /* ProductModifyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductModifyViewController.swift; sourceTree = "<group>"; };
 		A8BBBCEC22A7FB000035B149 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		A8BBBCEF22A7FF0E0035B149 /* Mylike.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mylike.swift; sourceTree = "<group>"; };
 		A8BBBCF322A7FFDB0035B149 /* Cargo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cargo.swift; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 				A87436C9228C117E001F31D1 /* ViewController.swift */,
 				A857C9A822A00EA900DA7C52 /* CategoryViewController.swift */,
 				A857C9AA22A0169500DA7C52 /* CategoryTableViewCell.swift */,
+				A89CC49722B1633A00DD99F6 /* ProductModifyViewController.swift */,
 				A8BBBD2122AF3FF90035B149 /* ProductPageViewController.swift */,
 				A8BBBD0922A83B800035B149 /* AddProductViewController.swift */,
 				A87436D1228C117E001F31D1 /* Assets.xcassets */,
@@ -327,6 +330,7 @@
 				A8BBBD0C22AB610F0035B149 /* ManagementDetailViewController.swift in Sources */,
 				A87A547622A26CE500AD12EE /* RegisterViewController.swift in Sources */,
 				A8BBBD0622A832730035B149 /* Evaluation.swift in Sources */,
+				A89CC49822B1633A00DD99F6 /* ProductModifyViewController.swift in Sources */,
 				A857C9B122A0D80C00DA7C52 /* ManagementViewController.swift in Sources */,
 				A8BBBD0222A802F10035B149 /* UserAccount.swift in Sources */,
 				A8BBBCFA22A800DC0035B149 /* Homeimage.swift in Sources */,

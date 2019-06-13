@@ -25,11 +25,11 @@ func showproducts<T:Codable,V:Codable>(_ requestParam: [String: V],type:T.Type,c
     executeTask(url_server!, requestParam) { (data, response, error) in
         if error == nil {
             if data != nil {
-                print("result", String(data: data!, encoding: .utf8))
+                //print("result", String(data: data!, encoding: .utf8))
                 let decoder = JSONDecoder()
                 decoder.dataDecodingStrategy = .deferredToData
                 if let result = try? decoder.decode([T].self, from: data!) {
-                    print(result)
+                   // print(result)
                     completionHandler(result)
                 }else{
                     print("error")

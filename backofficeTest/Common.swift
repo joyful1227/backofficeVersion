@@ -34,7 +34,7 @@ let chatcommon_url = "http://127.0.0.1:8080/Thunder_Web/Chatserver/"
 
 func executeTask<T:Codable>(_ url_server: URL, _ requestParam: [String: T], completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) {
     // 將輸出資料列印出來除錯用
-    print("output: \(requestParam)")
+    //print("output: \(requestParam)")
     
     let jsonData = try! JSONEncoder().encode(requestParam)
     var request = URLRequest(url: url_server)

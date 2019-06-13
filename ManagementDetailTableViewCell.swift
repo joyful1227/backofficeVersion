@@ -10,6 +10,16 @@ import UIKit
 
 class ManagementDetailTableViewCell: UITableViewCell {
 
+    
+    
+    @IBOutlet weak var productdetailImage: UIImageView!
+    
+    @IBOutlet weak var producdetailtName: UILabel!
+    @IBOutlet weak var productdetailPrice: UILabel!
+    
+    @IBOutlet weak var productdetailAmount: UILabel!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -33,6 +33,7 @@ class AddProductViewController: UIViewController {
     var backcategory = Array<Category>()   //接收回傳分類陣列
     var backcategoryName = Array<String>() //接收回傳分類名稱
     
+    var productStatus = 0
     var cateid = 0
     var id = 0
     
@@ -56,8 +57,8 @@ class AddProductViewController: UIViewController {
             if categories != nil {
                 self.backcategory = categories!
                 //print(categories as! Category)
-                print("backcategory.count = ")
-                print(self.backcategory.count)
+                //print("backcategory.count = ")
+                //print(self.backcategory.count)
                 DispatchQueue.main.async {
                     self.picker.reloadAllComponents()
                     self.categoryTextField.text = self.backcategory.first?.category_name
@@ -77,7 +78,7 @@ class AddProductViewController: UIViewController {
         sizeTextField.inputView = picker     //讓tf的輸入方式改為PickerView
         categoryTextField.text = backcategoryName.first
         sizeTextField.text = dataforSize.first
-        print("backcategoryName = \(backcategoryName.count)")
+        //print("backcategoryName = \(backcategoryName.count)")
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(closeKeyboard))
         self.view.addGestureRecognizer(tap)
@@ -141,7 +142,7 @@ class AddProductViewController: UIViewController {
         
         
         //price不是整數型態
-        if Int(inproductPrice) == nil {
+        if Int(inproductPrice) == nil || Int(inproductPrice) == 0 {
             suggestForPrice.text = "請輸入商品金額!"
             isValid = false
         }
@@ -162,11 +163,10 @@ class AddProductViewController: UIViewController {
             }
             
             
-            let product = Product(0, inproductName, base64image!, sizeTextField.text!, Int(inproductPrice)!, cateid, 1)
+            let product = Product(0, inproductName, base64image!, sizeTextField.text!, Int(inproductPrice)!, cateid, productStatus)
             
             
-  //  public init(_ product_id: Int, _ product_name: String, _ product_image: String, _ size: String , _ price: Int, _ category_id: Int, _ category_name: String,_ product_status:Int) {
-            //sizeTextField
+            
             //物件要轉Json格式，才能變成字串（因為要放到Dictionary）
             let productJson = try! JSONEncoder().encode(product)
             let productString = String(data: productJson, encoding: String.Encoding.utf8)
@@ -186,9 +186,9 @@ class AddProductViewController: UIViewController {
                 if idArray != nil {
                    
                     self.backids = idArray!
-                    print("backids count = \(self.backids.count)")
+                    //print("backids count = \(self.backids.count)")
                     if let id = self.backids.first {
-                         print("id = \(id)")
+                        // print("id = \(id)")
                        self.id = id
                         let alertController = UIAlertController(title: "商品已成功上架", message: nil, preferredStyle: .alert)
                         let okAlert = UIAlertAction(title: "確定", style: .default) { (action) in
@@ -221,11 +221,23 @@ class AddProductViewController: UIViewController {
 //    }
             
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        print("enter func")
+        //print("enter func")
         let controller = segue.destination as! ProductPageViewController
         controller.id = id
     }
  
+    
+    @IBAction func switchForStatus(_ sender: UISwitch) {
+        if sender.isOn{  //因為isOn是布林值所以只會有兩種狀況
+            productStatus = 1
+        }else {
+            productStatus = 0
+        }
+    }
+    
+    
+    
+    
     
 }
 

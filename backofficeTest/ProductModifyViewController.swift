@@ -184,16 +184,30 @@ class ProductModifyViewController: UIViewController {
                     self.activityIndicatorView.removeFromSuperview()
                 }
                 if idArray != nil {
-                    let alertController = UIAlertController(title: nil, message: "修改成功", preferredStyle: .alert)
-                    self.present(alertController, animated: false, completion:nil)
-                    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
-                        self.presentedViewController?.dismiss(animated: false
-                            , completion:nil)
-                        self.navigationController?.popViewController(animated: false)
-                }
+                    
+                      DispatchQueue.main.async {
+                      let alertController = UIAlertController(title: nil, message: "修改成功", preferredStyle: .alert)
+                       self.present(alertController, animated: false, completion:nil)
+                      }
+                    
+                       DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.7) {
+                       self.presentedViewController!.dismiss(animated: false, completion:nil)
+                       self.navigationController?.popViewController(animated: false)
+                    
+                       }
+
             
            }
-            
+//按鈕式導回
+//       DispatchQueue.main.async {
+//          let alertController = UIAlertController(title: "修改成功", message: nil, preferredStyle: .alert)
+//          let okAlert = UIAlertAction(title: "確定", style: .default, handler: { (action) in
+//          self.navigationController?.popViewController(animated: false)
+//       })
+//
+//           alertController.addAction(okAlert)
+//           self.present(alertController, animated: true, completion: nil)
+//         }
             
                 
             }

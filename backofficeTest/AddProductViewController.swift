@@ -190,14 +190,15 @@ class AddProductViewController: UIViewController {
                     if let id = self.backids.first {
                         // print("id = \(id)")
                        self.id = id
-                        let alertController = UIAlertController(title: "商品已成功上架", message: nil, preferredStyle: .alert)
-                        let okAlert = UIAlertAction(title: "確定", style: .default) { (action) in
+                       
+                        
+                        DispatchQueue.main.async {
+                            let alertController = UIAlertController(title: "商品已成功上架", message: nil, preferredStyle: .alert)
+                            let okAlert = UIAlertAction(title: "確定", style: .default) { (action) in
                                 //self.tabBarController?.selectedIndex = 0
                                 self.performSegue(withIdentifier: "goToProductSegue", sender: self)
-                            
-                        }
-                        alertController.addAction(okAlert)
-                        DispatchQueue.main.async {
+                            }
+                            alertController.addAction(okAlert)
                             self.present(alertController, animated: true, completion: nil)
                         }
                         

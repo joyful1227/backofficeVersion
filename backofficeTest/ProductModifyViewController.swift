@@ -129,7 +129,7 @@ class ProductModifyViewController: UIViewController {
     
     
     @IBAction func clickSubmit(_ sender: Any) {
-                                     //如果是nil給空字串，不是nil剪掉空白、換行
+                                //如果是nil給空字串，不是nil剪掉空白、換行
         let inproductName = productNameTextField.text == nil ? "" : productNameTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         let inproductPrice = productPriceTextField.text == nil ? "" : productPriceTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         
@@ -183,23 +183,21 @@ class ProductModifyViewController: UIViewController {
                 DispatchQueue.main.async {
                     self.activityIndicatorView.removeFromSuperview()
                 }
-
-                
                 if idArray != nil {
                     let alertController = UIAlertController(title: nil, message: "修改成功", preferredStyle: .alert)
-                    self.present(alertController, animated: true, completion:nil)
-                    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5) {
+                    self.present(alertController, animated: false, completion:nil)
+                    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
                         self.presentedViewController?.dismiss(animated: false
                             , completion:nil)
-                        DispatchQueue.main.async { self.navigationController?.popViewController(animated: false)
-                        }
-                    }
-                    
-                    
-
+                        self.navigationController?.popViewController(animated: false)
                 }
             
            }
+            
+            
+                
+            }
+            
         
         
        }

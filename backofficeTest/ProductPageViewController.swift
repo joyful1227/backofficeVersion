@@ -24,50 +24,89 @@ class ProductPageViewController: UIViewController {
     var requestParam = [String:String]()
     var productArray = [Product]()
     var product: Product?
-    
+    override func viewWillAppear(_ animated: Bool) {
+        if let id = id {
+            
+            requestParam["action"] = "getProductDetail"
+            requestParam["productid"] = String(id)
+            showproducts(requestParam, type: Product.self) { (productDetail) in   //[物件]
+                if productDetail != nil {
+                    self.productArray  = productDetail!
+                    if self.productArray.count > 0 {     //確認array有東西
+                        self.product = self.productArray.first
+                        if self.product?.product_status == 0 {
+                            self.productStatusText = "待上架"
+                        }else if self.product?.product_status == 1 {
+                            self.productStatusText = "已上架"
+                        }else {
+                            print("productStatusText error")
+                        }
+                        
+                        DispatchQueue.main.async {
+                            self.navigationItem.title = "商品編號：\(self.product!.product_id ?? 0)"
+                            self.productCategoryName.text = "商品分類： \(self.product!.category_name ?? "")"
+                            self.productName.text = "商品名稱： \(self.product!.product_name ?? "")"
+                            self.productPrice.text = "商品價格：$\(self.product!.price ?? 0)"
+                            self.productSize.text = "商品尺寸：\(self.product?.size ?? "")"
+                            self.productImage.image = UIImage(data: Data(base64Encoded: self.product!.product_image!)!)
+                            self.productStatus.text = "商品狀態：\(self.productStatusText)"
+                        }
+                        
+                        
+                    }
+                    
+                    
+                }
+                
+            }
+            
+            
+        }
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //print(id)
         //print("product page")
-        if let id = id {
-            
-           requestParam["action"] = "getProductDetail"
-           requestParam["productid"] = String(id)
-           showproducts(requestParam, type: Product.self) { (productDetail) in   //[物件]
-            if productDetail != nil {
-               self.productArray  = productDetail!
-                if self.productArray.count > 0 {     //確認array有東西
-                    self.product = self.productArray.first
-                    if self.product?.product_status == 0 {
-                        self.productStatusText = "待上架"
-                    }else if self.product?.product_status == 1 {
-                        self.productStatusText = "已上架"
-                    }else {
-                        print("productStatusText error")
-                    }
-                    
-                    DispatchQueue.main.async {
-                        self.navigationItem.title = "商品編號：\(self.product!.product_id ?? 0)"
-                        self.productCategoryName.text = "商品分類： \(self.product!.category_name ?? "")"
-                        self.productName.text = "商品名稱： \(self.product!.product_name ?? "")"
-                        self.productPrice.text = "商品價格：$\(self.product!.price ?? 0)"
-                        self.productSize.text = "商品尺寸：\(self.product?.size ?? "")"
-                        self.productImage.image = UIImage(data: Data(base64Encoded: self.product!.product_image!)!)
-                        self.productStatus.text = "商品狀態：\(self.productStatusText)"
-                    }
-                    
-                    
-                }
-                
-                
-            }
-           
-        }
-        
-        
-    }
+//        if let id = id {
+//            
+//           requestParam["action"] = "getProductDetail"
+//           requestParam["productid"] = String(id)
+//           showproducts(requestParam, type: Product.self) { (productDetail) in   //[物件]
+//            if productDetail != nil {
+//               self.productArray  = productDetail!
+//                if self.productArray.count > 0 {     //確認array有東西
+//                    self.product = self.productArray.first
+//                    if self.product?.product_status == 0 {
+//                        self.productStatusText = "待上架"
+//                    }else if self.product?.product_status == 1 {
+//                        self.productStatusText = "已上架"
+//                    }else {
+//                        print("productStatusText error")
+//                    }
+//                    
+//                    DispatchQueue.main.async {
+//                        self.navigationItem.title = "商品編號：\(self.product!.product_id ?? 0)"
+//                        self.productCategoryName.text = "商品分類： \(self.product!.category_name ?? "")"
+//                        self.productName.text = "商品名稱： \(self.product!.product_name ?? "")"
+//                        self.productPrice.text = "商品價格：$\(self.product!.price ?? 0)"
+//                        self.productSize.text = "商品尺寸：\(self.product?.size ?? "")"
+//                        self.productImage.image = UIImage(data: Data(base64Encoded: self.product!.product_image!)!)
+//                        self.productStatus.text = "商品狀態：\(self.productStatusText)"
+//                    }
+//                    
+//                    
+//                }
+//                
+//                
+//            }
+//           
+//        }
+//        
+//        
+//    }
     
 
   }

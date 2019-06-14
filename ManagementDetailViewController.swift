@@ -10,17 +10,24 @@ import UIKit
 
 class ManagementDetailViewController: UIViewController {
 
-    @IBOutlet weak var accountImage: UIImageView!
-    @IBOutlet weak var accountidLabel: UILabel!
-    @IBOutlet weak var totalPriceLabel: UILabel!
+    @IBOutlet weak var accountImage: UIImageView!  //帳戶照片
+    @IBOutlet weak var accountidLabel: UILabel!    //會員帳號
+    @IBOutlet weak var totalPriceLabel: UILabel!   //訂單總金額
+    @IBOutlet weak var orderUsePoint: UILabel!     //該訂單使用積分
+    @IBOutlet weak var orderReceiver: UILabel!     //該訂單收件者
+    @IBOutlet weak var orderPhone: UILabel!        //該訂單連絡電話號碼
+    @IBOutlet weak var orderAddress: UILabel!      //該訂單收件地址
+    
+    
+    
     
     @IBOutlet weak var detailTableView: UITableView!
     
-    var order: Ordermain?                    //接上一頁傳來的物件
-    var orderdetails = [Orderdetail]()       //接回傳的明細
-    var accounts: UserAccount?               //接回傳的用戶物件
+    var order: Ordermain?                     //接上一頁傳來的物件
+    var orderdetails = [Orderdetail]()        //接回傳的明細
+    var accounts: UserAccount?                //接回傳的用戶物件
     var requestParam = [String: String]()     //請求訂單明細
-    var requestAccount = [String: String]()  //請求會員資料
+    var requestAccount = [String: String]()   //請求會員資料
     
     
     
@@ -31,13 +38,17 @@ class ManagementDetailViewController: UIViewController {
         
         if let ordermain = order {
             let orderid = ordermain.order_id
-            accountidLabel.text = "會員編號：\(order!.orderaccount_id ?? 0)"
-            totalPriceLabel.text = "訂單總金額：\(order!.totalprice ?? 0)"
+            navigationItem.title = "訂單編號：\(orderid!)"
+            //totalPriceLabel.text = "訂單總金額：\(order!.totalprice ?? 0)"
+            //orderUsePoint.text = "使用積分：\(order!.costpoint ?? 0)點"
+            orderReceiver.text = "收件人：\(order!.receiver!)"
+            orderPhone.text = "電話號碼：\(order!.phone!)"
+            orderAddress.text = "地址：\(order!.address!)"
             
             
             
             //用訂單編號取明細
-            requestParam["action"] = "getAllorderdetail"
+            requestParam["action"] = "getOrderDetailAndProductName"
             requestParam["orderid"] = "\(orderid!)"
             
             showproducts(requestParam, type: Orderdetail.self) { (orderdetails) in
@@ -67,7 +78,8 @@ class ManagementDetailViewController: UIViewController {
                         self.accounts = userAccounts!.first
                         DispatchQueue.main.async {
                           self.accountImage.image = UIImage(data: Data(base64Encoded: self.accounts!.photo!)!)
-                            
+                            self.accountidLabel.text = "會員帳號：\(self.accounts!.account_id!)"
+
                         }
                     }
                    
@@ -75,6 +87,8 @@ class ManagementDetailViewController: UIViewController {
             }
         
         
+            
+
             
         }
     }

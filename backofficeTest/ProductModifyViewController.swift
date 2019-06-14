@@ -10,10 +10,16 @@ import UIKit
 
 class ProductModifyViewController: UIViewController {
 
-
+    @IBOutlet weak var suggestForProductNameLabel: UILabel!
+    @IBOutlet weak var suggestForProductPrice: UILabel!
+    @IBOutlet weak var productSizeLabel: UILabel!
+    @IBOutlet weak var productStatusLabel: UILabel!
+    @IBOutlet weak var productStatusSwitch: UISwitch!
+    
+    
+    
     @IBOutlet weak var categoryTextField: UITextField!
     @IBOutlet weak var productNameTextField: UITextField!
-    @IBOutlet weak var productSizeTextField: UITextField!
     @IBOutlet weak var productPriceTextField: UITextField!
     @IBOutlet weak var imageButton: UIButton!
     
@@ -29,7 +35,9 @@ class ProductModifyViewController: UIViewController {
     var backcategory = Array<Category>()   //接收回傳分類陣列
     var backcategoryName = Array<String>() //接收回傳分類名稱
     var dataforSize = ["S","M","L"]
+    var productsize:String?
     
+    var productStatus = 0
     var selectedCategory_id = 0
     var cateid = 0
     var productid = 0
@@ -37,16 +45,37 @@ class ProductModifyViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     
+        suggestForProductNameLabel.text = ""
+        suggestForProductPrice.text = ""
+        productSizeLabel.text = ""
+        productStatusLabel.text = ""
+        
+        
         if let product = product {
            print("product.category_name = \(product.category_name!)")
            productid = product.product_id!
            productNameTextField.text = product.product_name!
            productPriceTextField.text = "\(product.price ?? 0)"
            categoryTextField.text = product.category_name
-           productSizeTextField.text = product.size
-           
+           productSizeLabel.text = "商品尺寸：\(product.size ?? "")"
+           productsize = product.size
+            
+            
+            if product.product_status == 0 {
+                productStatusLabel.text = "上架狀態：待上架"
+                productStatusSwitch.isOn = false
+            }else if product.product_status == 1 {
+                productStatusLabel.text = "上架狀態：已上架"
+                productStatusSwitch.isOn = true
+            }else {
+                print("productStatusText error")
+            }
+            
+            
            imageButton.setImage(UIImage(data: Data(base64Encoded: self.product!.product_image!)!), for: .normal)
           
+        
+            
             
             let requestcategory = ["action" : "getAllcategory"]
             showproducts(requestcategory, type: Category.self) { (categories) in
@@ -97,7 +126,7 @@ class ProductModifyViewController: UIViewController {
     }
     
     
-    //商品照片
+    //商品照片跳出actionSheet
     @IBAction func clickImageButton(_ sender: UIButton) {
         let alertController =  UIAlertController(title: "新增商品從", message: nil, preferredStyle: .actionSheet)
         
@@ -125,10 +154,21 @@ class ProductModifyViewController: UIViewController {
 
     }
     
+    //switchChange 切換變動顯示字
+    @IBAction func switchChange(_ sender: UISwitch) {
+        if sender.isOn { //開
+            productStatusLabel.text = "上架狀態：已上架"
+        }else { //關
+            productStatusLabel.text = "上架狀態：待上架"
+        }
+    }
     
     
-    
+    //送出--------------------------------------------------------------
     @IBAction func clickSubmit(_ sender: Any) {
+        suggestForProductNameLabel.text = ""
+        suggestForProductPrice.text = ""
+        
                                 //如果是nil給空字串，不是nil剪掉空白、換行
         let inproductName = productNameTextField.text == nil ? "" : productNameTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         let inproductPrice = productPriceTextField.text == nil ? "" : productPriceTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
@@ -140,16 +180,23 @@ class ProductModifyViewController: UIViewController {
         
         //name是空字串
         if inproductName.isEmpty {
-            //suggestForProductName.text = "請輸入商品名稱！"
+            suggestForProductNameLabel.text = "請輸入商品名稱！"
             isValid = false
         }
-        
         
         //price不是整數型態
         if Int(inproductPrice) == nil || Int(inproductPrice) == 0 {
-            //suggestForPrice.text = "請輸入商品金額!"
+             suggestForProductPrice.text = "請輸入商品金額!"
             isValid = false
         }
+        
+        
+        if productStatusSwitch.isOn == true {
+            productStatus = 1
+        }else{
+            productStatus = 0
+        }
+        
         
         if isValid == true {
               image = self.imageButton.image(for: .normal)
@@ -166,7 +213,7 @@ class ProductModifyViewController: UIViewController {
               }
           }
             
-          let product = Product(productid, inproductName, base64image!, productSizeTextField.text!, Int(inproductPrice)!, cateid, 1)
+          let product = Product(productid, inproductName, base64image!, productsize!, Int(inproductPrice)!, cateid, productStatus)
             
           //物件要轉Json格式，才能變成字串（因為要放到Dictionary）
           let productJson = try! JSONEncoder().encode(product)
@@ -297,28 +344,19 @@ extension ProductModifyViewController: UIPickerViewDelegate, UIPickerViewDataSou
     
     //裡面有幾個項目
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        if categoryTextField.isFirstResponder {
             return backcategory.count
-        }else { //sizeTextField.isFirstResponder
-            return dataforSize.count
-        }
+
     }
     
     //設定每列要顯示的內容
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        if categoryTextField.isFirstResponder {
             return backcategory[row].category_name
-        }else { //sizeTextField.isFirstResponder
-            return dataforSize[row]
-        }
+
     }
     
     //選到那列要做的事情
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        if categoryTextField.isFirstResponder {
             categoryTextField.text = backcategory[row].category_name
-        }else { //sizeTextField.isFirstResponder
-            productSizeTextField.text = dataforSize[row]
-        }
+       
     }
 }

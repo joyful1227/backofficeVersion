@@ -24,6 +24,8 @@ class ProductPageViewController: UIViewController {
     var requestParam = [String:String]()
     var productArray = [Product]()
     var product: Product?
+    
+    
     override func viewWillAppear(_ animated: Bool) {
         if let id = id {
             
@@ -134,8 +136,16 @@ class ProductPageViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let controller = segue.destination as! ProductModifyViewController
-        controller.product = product
+        
+        if segue.identifier == "goToProductModify" {
+           let controller = segue.destination as! ProductModifyViewController
+           controller.product = product
+        }else if segue.identifier == "goToProductModify" {
+            let controller = segue.destination as! FeedBackViewController
+            controller.product = product
+        }else {
+            print("product page prepare fail")
+        }
     }
     
 }

@@ -42,12 +42,11 @@ class AddProductViewController: UIViewController {
     //var dataForCategory = ["1","2","3"]
     var dataforSize = ["S","M","L"]
     
-    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
+    
         suggestForImage.text = ""
         suggestForPrice.text = ""
         suggestForProductName.text = ""
@@ -118,6 +117,10 @@ class AddProductViewController: UIViewController {
     
     //送出------------------------------------------------------------------------------------------
     @IBAction func clickSubmit(_ sender: Any) {
+        suggestForImage.text = ""
+        suggestForPrice.text = ""
+        suggestForProductName.text = ""
+        
                                                 //如果是nil給空字串，不是nil剪掉空白、換行
         let inproductName = inputProductName.text == nil ? "" : inputProductName.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         let inproductPrice = inputProductPrice.text == nil ? "" : inputProductPrice.text!.trimmingCharacters(in: .whitespacesAndNewlines)
@@ -193,7 +196,7 @@ class AddProductViewController: UIViewController {
                        
                         
                         DispatchQueue.main.async {
-                            let alertController = UIAlertController(title: "商品已成功上架", message: nil, preferredStyle: .alert)
+                            let alertController = UIAlertController(title: "商品已新增成功", message: nil, preferredStyle: .alert)
                             let okAlert = UIAlertAction(title: "確定", style: .default) { (action) in
                                 //self.tabBarController?.selectedIndex = 0
                                 self.performSegue(withIdentifier: "goToProductSegue", sender: self)

@@ -140,7 +140,7 @@ class ProductPageViewController: UIViewController {
         if segue.identifier == "goToProductModify" {
            let controller = segue.destination as! ProductModifyViewController
            controller.product = product
-        }else if segue.identifier == "goToProductModify" {
+        }else if segue.identifier == "goToProductFeedBack" {
             let controller = segue.destination as! FeedBackViewController
             controller.product = product
         }else {

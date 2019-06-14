@@ -113,7 +113,8 @@ extension ManagementViewController: UITableViewDelegate, UITableViewDataSource {
         
         
         
-        switch order.order_status {   // 0=待出貨  1=已出貨  2=已送達  3=取消  4=已退貨
+        switch order.order_status {   // //0=待出貨   1=已出貨   2=已送達   3=客戶收到貨   4=已退貨
+        
         case 0:
             cell.orderstatusLabel.text = "訂單狀態：待出貨"
         case 1:
@@ -121,7 +122,7 @@ extension ManagementViewController: UITableViewDelegate, UITableViewDataSource {
         case 2:
             cell.orderstatusLabel.text = "訂單狀態：已送達"
         case 3:
-            cell.orderstatusLabel.text = "訂單狀態：取消"
+            cell.orderstatusLabel.text = "訂單狀態：客戶收到貨"
         case 4:
             cell.orderstatusLabel.text = "訂單狀態：已退貨"
         default:
@@ -129,7 +130,7 @@ extension ManagementViewController: UITableViewDelegate, UITableViewDataSource {
         }
         
         
-        cell.accessoryType = .disclosureIndicator   //" > "
+        cell.accessoryType = .disclosureIndicator   //" > " 圖案
         cell.orderButton.addTarget(self, action: #selector(orderButtonAction(sender:)), for: .touchUpInside)
         
         

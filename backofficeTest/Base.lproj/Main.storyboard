@@ -353,11 +353,32 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Awg-G4-pXM"/>
                     </view>
-                    <navigationItem key="navigationItem" title="商品分類" id="zVL-JK-kxq"/>
+                    <navigationItem key="navigationItem" title="商品分類" id="zVL-JK-kxq">
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="wz0-0f-qgP">
+                            <connections>
+                                <segue destination="472-Bu-PqN" kind="show" id="gid-Q2-cP8"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6n8-uc-5C8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2857.971014492754" y="-317.41071428571428"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="4iC-iC-B56">
+            <objects>
+                <viewController id="472-Bu-PqN" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="33I-hH-FUf">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="7SB-Jn-18n"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yNc-nA-koO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3636" y="-1054"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="nhd-0c-dpL">

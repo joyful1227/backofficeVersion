@@ -16,19 +16,27 @@ class ManagementDetailViewController: UIViewController {
     
     @IBOutlet weak var detailTableView: UITableView!
     
-    var order: Ordermain?
-    var orderdetails = [Orderdetail]()
-    var requestParam = [String:String]()
+    var order: Ordermain?                    //接上一頁傳來的物件
+    var orderdetails = [Orderdetail]()       //接回傳的明細
+    var accounts: UserAccount?               //接回傳的用戶物件
+    var requestParam = [String: String]()     //請求訂單明細
+    var requestAccount = [String: String]()  //請求會員資料
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        accountImage.layer.cornerRadius = accountImage.frame.width/2
+        
         
         if let ordermain = order {
             let orderid = ordermain.order_id
             accountidLabel.text = "會員編號：\(order!.orderaccount_id ?? 0)"
             totalPriceLabel.text = "訂單總金額：\(order!.totalprice ?? 0)"
-            //用會員編號取照片
             
+            
+            
+            //用訂單編號取明細
             requestParam["action"] = "getAllorderdetail"
             requestParam["orderid"] = "\(orderid!)"
             
@@ -36,7 +44,7 @@ class ManagementDetailViewController: UIViewController {
                 if orderdetails != nil {
                     if orderdetails!.isEmpty {
                         print("orderdetail is empty")
-                    }else {
+                    }else {                                 //確定回傳的內detail陣列裡面有明細[明細1,明細2,明細3]
                         self.orderdetails = orderdetails!
                         DispatchQueue.main.async {
                             self.detailTableView.reloadData()
@@ -44,6 +52,28 @@ class ManagementDetailViewController: UIViewController {
                     }
                 }
             }
+            
+            //用會員編號取照片
+            requestAccount["action"] = "useSNgetaccount"
+            requestAccount["snaccountid"] = String(order!.orderaccount_id!)
+            //print("phone\(requestAccount)")
+        
+            showproducts(requestAccount, type: UserAccount.self) { (userAccounts) in
+                if userAccounts != nil { //SVR有回傳
+                    
+                    if userAccounts!.isEmpty { //陣列無值
+                        print("userAccounts is empty")
+                    }else {                    //陣列有值
+                        self.accounts = userAccounts!.first
+                        DispatchQueue.main.async {
+                          self.accountImage.image = UIImage(data: Data(base64Encoded: self.accounts!.photo!)!)
+                            
+                        }
+                    }
+                   
+                }
+            }
+        
         
             
         }
@@ -52,6 +82,8 @@ class ManagementDetailViewController: UIViewController {
 
 }
 
+
+//Table View 處理
 extension ManagementDetailViewController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {

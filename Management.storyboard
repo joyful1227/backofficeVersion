@@ -29,35 +29,39 @@
                                     <action selector="clickSegmented:" destination="onb-lW-FmK" eventType="valueChanged" id="oQK-dj-58o"/>
                                 </connections>
                             </segmentedControl>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="120" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7Xr-lB-SIB">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="155" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7Xr-lB-SIB">
                                 <rect key="frame" x="0.0" y="123" width="414" height="690"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="orderCell" rowHeight="150" id="xtq-S5-20G" customClass="ManagementTableViewCell" customModule="backofficeTest" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="150"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="orderCell" rowHeight="155" id="xtq-S5-20G" customClass="ManagementTableViewCell" customModule="backofficeTest" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="155"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xtq-S5-20G" id="Nj8-Te-VGi">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="149.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="154.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0wE-cb-D8R">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0wE-cb-D8R">
                                                     <rect key="frame" x="11" y="11" width="127" height="81"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="0wE-cb-D8R" secondAttribute="height" multiplier="127:81" id="Ocn-hK-PWx"/>
+                                                        <constraint firstAttribute="width" constant="127" id="nDd-eg-jZF"/>
+                                                    </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Xw-fh-j1M">
-                                                    <rect key="frame" x="163" y="25" width="209" height="18"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="訂單編號：" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Xw-fh-j1M">
+                                                    <rect key="frame" x="163" y="25" width="76.5" height="18"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2oI-p1-74e">
-                                                    <rect key="frame" x="163" y="52" width="209" height="18"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="訂單狀態：" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2oI-p1-74e">
+                                                    <rect key="frame" x="163" y="106" width="76.5" height="18"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dSu-Bz-qBC">
-                                                    <rect key="frame" x="292" y="100" width="47" height="30"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dSu-Bz-qBC">
+                                                    <rect key="frame" x="320" y="108" width="44" height="27"/>
                                                     <color key="backgroundColor" red="1" green="0.56792508080000004" blue="0.36867178969999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <inset key="contentEdgeInsets" minX="0.0" minY="5" maxX="0.0" maxY="5"/>
@@ -70,31 +74,39 @@
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </button>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uX2-XL-xVy">
-                                                    <rect key="frame" x="163" y="78" width="209" height="21"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="21" id="Lb4-TX-gKK"/>
-                                                    </constraints>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="使用積分：" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="msb-3T-qO2">
+                                                    <rect key="frame" x="163" y="52" width="76.5" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="訂單總金額：" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uX2-XL-xVy">
+                                                    <rect key="frame" x="163" y="79" width="92" height="18"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="2oI-p1-74e" firstAttribute="top" secondItem="uX2-XL-xVy" secondAttribute="bottom" constant="9" id="0qy-Cb-xRd"/>
+                                                <constraint firstItem="msb-3T-qO2" firstAttribute="leading" secondItem="0wE-cb-D8R" secondAttribute="trailing" constant="25" id="3g9-ri-Zeq"/>
                                                 <constraint firstItem="uX2-XL-xVy" firstAttribute="leading" secondItem="0wE-cb-D8R" secondAttribute="trailing" constant="25" id="NhV-G5-oom"/>
-                                                <constraint firstItem="2oI-p1-74e" firstAttribute="top" secondItem="0Xw-fh-j1M" secondAttribute="bottom" constant="9" id="Q6I-3l-e7L"/>
                                                 <constraint firstItem="0Xw-fh-j1M" firstAttribute="leading" secondItem="0wE-cb-D8R" secondAttribute="trailing" constant="25" id="ReF-rO-1Ey"/>
                                                 <constraint firstItem="2oI-p1-74e" firstAttribute="leading" secondItem="0wE-cb-D8R" secondAttribute="trailing" constant="25" id="Vcw-Kw-iwE"/>
-                                                <constraint firstItem="uX2-XL-xVy" firstAttribute="top" secondItem="2oI-p1-74e" secondAttribute="bottom" constant="8" id="pxl-2v-sA7"/>
+                                                <constraint firstItem="msb-3T-qO2" firstAttribute="top" secondItem="0Xw-fh-j1M" secondAttribute="bottom" constant="9" id="npL-Me-C9A"/>
+                                                <constraint firstItem="uX2-XL-xVy" firstAttribute="top" secondItem="msb-3T-qO2" secondAttribute="bottom" constant="9" id="xIO-xB-NeJ"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="dSu-Bz-qBC" secondAttribute="bottom" constant="20" id="FBC-xb-mI6"/>
-                                            <constraint firstAttribute="trailing" secondItem="dSu-Bz-qBC" secondAttribute="trailing" constant="75" id="G4H-9F-afb"/>
+                                            <constraint firstAttribute="bottom" secondItem="dSu-Bz-qBC" secondAttribute="bottom" constant="20" id="8No-f9-klC"/>
+                                            <constraint firstAttribute="trailing" secondItem="dSu-Bz-qBC" secondAttribute="trailing" constant="50" id="G4H-9F-afb"/>
+                                            <constraint firstItem="0wE-cb-D8R" firstAttribute="leading" secondItem="xtq-S5-20G" secondAttribute="leading" constant="11" id="Smj-WG-CRQ"/>
+                                            <constraint firstItem="0wE-cb-D8R" firstAttribute="top" secondItem="xtq-S5-20G" secondAttribute="top" constant="11" id="wE3-6y-cOW"/>
                                             <constraint firstItem="0Xw-fh-j1M" firstAttribute="top" secondItem="xtq-S5-20G" secondAttribute="top" constant="25" id="xgB-ML-UH5"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="orderButton" destination="dSu-Bz-qBC" id="DT3-SD-n7y"/>
+                                            <outlet property="orderCostPointLabel" destination="msb-3T-qO2" id="oHk-jR-Pbt"/>
                                             <outlet property="orderImage" destination="0wE-cb-D8R" id="9kX-1q-S2r"/>
                                             <outlet property="orderTotalPriceLabel" destination="uX2-XL-xVy" id="W7j-qH-19l"/>
                                             <outlet property="orderidLabel" destination="0Xw-fh-j1M" id="Vn5-no-W8s"/>
@@ -218,36 +230,15 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="總金額" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oXs-0D-osx">
-                                <rect key="frame" x="145" y="127" width="179" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="使用積分" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A3V-7S-Hdl">
-                                <rect key="frame" x="145" y="154" width="200" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="收件人" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aaQ-Cl-lxj">
-                                <rect key="frame" x="145" y="180" width="200" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="收件地址" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RKX-Zo-i62">
-                                <rect key="frame" x="145" y="238" width="212" height="21"/>
+                                <rect key="frame" x="145" y="143" width="200" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="電話號碼" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fxl-M7-oge">
-                                <rect key="frame" x="145" y="209" width="200" height="21"/>
+                                <rect key="frame" x="145" y="172" width="200" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <nil key="textColor"/>
@@ -257,6 +248,13 @@
                                 <rect key="frame" x="20" y="114" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="收件地址" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RKX-Zo-i62">
+                                <rect key="frame" x="145" y="201" width="249" height="43"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="THC-Nu-PqI"/>
@@ -269,8 +267,6 @@
                         <outlet property="orderAddress" destination="RKX-Zo-i62" id="0uI-XY-ugi"/>
                         <outlet property="orderPhone" destination="fxl-M7-oge" id="kCA-m7-jK9"/>
                         <outlet property="orderReceiver" destination="aaQ-Cl-lxj" id="Lmy-5H-VnC"/>
-                        <outlet property="orderUsePoint" destination="A3V-7S-Hdl" id="DbL-Or-M2G"/>
-                        <outlet property="totalPriceLabel" destination="oXs-0D-osx" id="coK-l6-rzf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m6C-Br-HOF" userLabel="First Responder" sceneMemberID="firstResponder"/>

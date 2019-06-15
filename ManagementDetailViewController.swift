@@ -12,8 +12,6 @@ class ManagementDetailViewController: UIViewController {
 
     @IBOutlet weak var accountImage: UIImageView!  //帳戶照片
     @IBOutlet weak var accountidLabel: UILabel!    //會員帳號
-    @IBOutlet weak var totalPriceLabel: UILabel!   //訂單總金額
-    @IBOutlet weak var orderUsePoint: UILabel!     //該訂單使用積分
     @IBOutlet weak var orderReceiver: UILabel!     //該訂單收件者
     @IBOutlet weak var orderPhone: UILabel!        //該訂單連絡電話號碼
     @IBOutlet weak var orderAddress: UILabel!      //該訂單收件地址
@@ -59,6 +57,7 @@ class ManagementDetailViewController: UIViewController {
                         self.orderdetails = orderdetails!
                         DispatchQueue.main.async {
                             self.detailTableView.reloadData()
+                            print("product_Name = \(orderdetails?.first?.product_Name)")
                         }
                     }
                 }
@@ -117,7 +116,7 @@ extension ManagementDetailViewController: UITableViewDelegate, UITableViewDataSo
         //cell.producdetailtName = orderdetail.orderproduct_id 用商品編號再去找
         cell.productdetailPrice.text = "商品金額：＄\(orderdetail.price!)"
         cell.productdetailAmount.text = "購買數量：\(orderdetail.amount!)個"
-        
+        cell.productdetailImage.image = UIImage(data: Data(base64Encoded: orderdetail.product_IMG ?? "")!)
         
         return cell
     }
